@@ -1,0 +1,52 @@
+name: RAG evals
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # моделі embeddings/reranker (~1.3 ГБ) — кешуються між прогонами
+      - uses: actions/cache@v4
+        with:
+          path: .models
+          key: models-${{ hashFiles('config.yaml') }}
+          restore-keys: models-
+
+      # кеш відповідей LLM і embeddings: повторний прогін без змін промптів/даних не витрачає квоту free tier
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: llm-${{ hashFiles('prompts/**', 'data/raw/**', 'evals/testset.jsonl', 'config.yaml', 'src/**') }}
+          restore-keys: llm-
+
+      - name: Evals (retrieval + RAG, пороги з config.yaml)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: make ci
+
+      - name: Результати в summary
+        if: always()
+        run: |
+          for f in evals/results/retrieval.md evals/results/rag.md; do
+            [ -f "$f" ] && cat "$f" >> "$GITHUB_STEP_SUMMARY"
+          done
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-results
+          path: evals/results/

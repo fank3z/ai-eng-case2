@@ -1,0 +1,63 @@
+# Усі параметри пайплайну. Ключі — лише у .env (локально) або GitHub Secrets (CI).
+paths:
+  raw: data/raw
+  processed: data/processed
+  index: index
+  results: evals/results
+
+chunking:
+  strategy: structure      # основна; fixed будується паралельно для порівняння
+  max_tokens: 300          # верхня межа чанка (розділ більший -> ділиться по межах абзаців/списків/таблиць)
+  min_tokens: 60           # дрібні розділи зливаються з наступним
+  fixed_size: 50           # baseline: вікно у словах (~65 токенів, як середній структурний чанк)
+  fixed_overlap: 12
+  near_dup_threshold: 0.85 # Jaccard 5-shingles для майже-дублікатів
+
+embeddings:
+  backend: fastembed       # fastembed | gemini | tfidf (офлайн-заглушка)
+  model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+  models_dir: .models
+  gemini_model: gemini-embedding-001
+
+rerank:
+  backend: cross_encoder   # cross_encoder | none | overlap (офлайн-заглушка)
+  model: jinaai/jina-reranker-v2-base-multilingual
+  models_dir: .models
+
+search:
+  candidates: 30           # кандидатів з кожного пошуку до злиття
+  rrf_k: 60                # Reciprocal Rank Fusion
+  weights: {bm25: 1.0, vector: 1.0}
+  rerank_top: 20
+  default_filters:         # роль користувача за замовчуванням: інженер NOC
+    status: current        # скасовані версії документів не шукаємо
+    access: [noc, field]   # документи менеджменту недоступні
+
+rag:
+  prompt: v2
+  mode: hybrid_rerank
+  top_k: 5
+  context_budget_tokens: 1200
+  min_rerank_score: null   # поріг «не знаю» без виклику LLM; калібрувати після першого прогону
+  temperature: 0.0
+
+llm:
+  answer: {model: gemini-3.5-flash-lite, min_interval_s: 7, timeout_s: 90, max_retries: 4, backoff_s: 8}
+  judge:  {model: gemini-3.8-flash,      min_interval_s: 7, timeout_s: 90, max_retries: 4, backoff_s: 8}
+
+# $ за 1M токенів за ПЛАТНИМ тарифом (оцінка для продакшну). Заповнити з https://ai.google.dev/gemini-api/docs/pricing
+pricing_usd_per_1m:
+  gemini-3.5-flash-lite: {input: 0.0, output: 0.0}
+  gemini-3.8-flash: {input: 0.0, output: 0.0}
+
+eval:
+  prompts: [v1, v2]        # make eval порівнює версії; CI проганяє лише rag.prompt
+  judge_correctness_prompt: v1
+  judge_faithfulness_prompt: v1
+  thresholds:              # CI падає, якщо нижче. ⚠️ Переглянути після першого прогону
+    retrieval_recall@5: 0.80
+    abstain_accuracy: 0.80
+    key_fact_recall: 0.70
+    source_hit: 0.80
+    judge_pass: 0.70
+    faithfulness: 0.80
