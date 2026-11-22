@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T18:42:23+00:00",
+  "generated_at": "2026-11-22T19:12:44+00:00",
   "chunking": {
     "strategy": "structure",
     "max_tokens": 300,
@@ -21,16 +21,16 @@
   "chunk_stats": {
     "structure": {
       "n_chunks": 73,
-      "tokens_mean": 67.1,
-      "tokens_median": 64,
+      "tokens_mean": 66.2,
+      "tokens_median": 63,
       "tokens_min": 12,
       "tokens_max": 158
     },
     "fixed": {
-      "n_chunks": 90,
-      "tokens_mean": 71.8,
-      "tokens_median": 79.0,
-      "tokens_min": 21,
+      "n_chunks": 89,
+      "tokens_mean": 71.6,
+      "tokens_median": 79,
+      "tokens_min": 20,
       "tokens_max": 103
     }
   },
@@ -82,8 +82,8 @@
       "superseded_by": "battery-backup-standard-2026",
       "doc_type": "policy",
       "access": "noc",
-      "doc_hash": "811d35a8bda494368e13008a597730d9c6ee2783770c6247b180c951e80018d0",
-      "n_chars": 505,
+      "doc_hash": "0d4c67c5bee486644d4c2e7f5c5e36a9d6b22a9e9c785d00fcbbf39c602f33d4",
+      "n_chars": 496,
       "n_chunks": 2,
       "duplicate_of": null,
       "dedup_reason": null,
@@ -100,8 +100,8 @@
       "superseded_by": null,
       "doc_type": "policy",
       "access": "noc",
-      "doc_hash": "fd23810272a8561e82130d7f8ad6b2f1a332ac2cf8f3e9fab76c802367baa1dd",
-      "n_chars": 948,
+      "doc_hash": "d482e71373c33028026373bb5812c378c9260cdd8ce84c89e4262c58d7cfec9a",
+      "n_chars": 936,
       "n_chunks": 3,
       "duplicate_of": null,
       "dedup_reason": null,
@@ -298,8 +298,8 @@
       "superseded_by": null,
       "doc_type": "report",
       "access": "management",
-      "doc_hash": "ff633b9f4ead07dee82dfbd3e06e8ef785dd360c387fb8233a759fcf1777377e",
-      "n_chars": 563,
+      "doc_hash": "2f849e4de302752049ef37bd00fb803ea9fcccd05f673a8de05b345f3966f9e1",
+      "n_chars": 555,
       "n_chunks": 2,
       "duplicate_of": null,
       "dedup_reason": null,
@@ -640,8 +640,8 @@
       "superseded_by": null,
       "doc_type": "contract",
       "access": "management",
-      "doc_hash": "a1cc6b255339d8279cb23decfd39aecf2e6b1a38844c7608c2a81265ee3bafa1",
-      "n_chars": 603,
+      "doc_hash": "67fc42512195a881d82427cd010f22f0a58c804fed50fb869ca5846f6b3b1dd6",
+      "n_chars": 585,
       "n_chunks": 2,
       "duplicate_of": null,
       "dedup_reason": null,

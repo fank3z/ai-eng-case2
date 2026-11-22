@@ -1,0 +1,1908 @@
+{
+ "n_questions": 22,
+ "embeddings": {
+  "backend": "fastembed",
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "models_dir": ".models",
+  "gemini_model": "gemini-embedding-001"
+ },
+ "rerank": {
+  "backend": "cross_encoder",
+  "model": "jinaai/jina-reranker-v2-base-multilingual",
+  "models_dir": ".models"
+ },
+ "rows": [
+  {
+   "chunking": "structure",
+   "mode": "bm25",
+   "filters": "status+access",
+   "recall@1": 0.7727272727272727,
+   "recall@3": 0.8636363636363636,
+   "recall@5": 0.9090909090909091,
+   "mrr@10": 0.8295454545454546,
+   "stale_top1": 0
+  },
+  {
+   "chunking": "structure",
+   "mode": "vector",
+   "filters": "status+access",
+   "recall@1": 0.4090909090909091,
+   "recall@3": 0.6818181818181818,
+   "recall@5": 0.9090909090909091,
+   "mrr@10": 0.5989177489177488,
+   "stale_top1": 0
+  },
+  {
+   "chunking": "structure",
+   "mode": "hybrid",
+   "filters": "status+access",
+   "recall@1": 0.6363636363636364,
+   "recall@3": 0.9090909090909091,
+   "recall@5": 0.9090909090909091,
+   "mrr@10": 0.7792207792207791,
+   "stale_top1": 0
+  },
+  {
+   "chunking": "structure",
+   "mode": "hybrid_rerank",
+   "filters": "status+access",
+   "recall@1": 0.8636363636363636,
+   "recall@3": 0.9545454545454546,
+   "recall@5": 0.9545454545454546,
+   "mrr@10": 0.9090909090909091,
+   "stale_top1": 0
+  },
+  {
+   "chunking": "structure",
+   "mode": "hybrid_rerank",
+   "filters": "без фільтрів",
+   "recall@1": 0.8181818181818182,
+   "recall@3": 0.9545454545454546,
+   "recall@5": 0.9545454545454546,
+   "mrr@10": 0.8787878787878788,
+   "stale_top1": 2
+  },
+  {
+   "chunking": "fixed",
+   "mode": "bm25",
+   "filters": "status+access",
+   "recall@1": 0.6818181818181818,
+   "recall@3": 0.9090909090909091,
+   "recall@5": 0.9090909090909091,
+   "mrr@10": 0.7727272727272727,
+   "stale_top1": 0
+  },
+  {
+   "chunking": "fixed",
+   "mode": "vector",
+   "filters": "status+access",
+   "recall@1": 0.4090909090909091,
+   "recall@3": 0.7727272727272727,
+   "recall@5": 0.9090909090909091,
+   "mrr@10": 0.6132575757575758,
+   "stale_top1": 0
+  },
+  {
+   "chunking": "fixed",
+   "mode": "hybrid",
+   "filters": "status+access",
+   "recall@1": 0.7272727272727273,
+   "recall@3": 0.9090909090909091,
+   "recall@5": 0.9090909090909091,
+   "mrr@10": 0.8181818181818182,
+   "stale_top1": 0
+  },
+  {
+   "chunking": "fixed",
+   "mode": "hybrid_rerank",
+   "filters": "status+access",
+   "recall@1": 0.6363636363636364,
+   "recall@3": 0.9090909090909091,
+   "recall@5": 0.9090909090909091,
+   "mrr@10": 0.7784090909090909,
+   "stale_top1": 0
+  }
+ ],
+ "details": {
+  "structure/bm25": [
+   {
+    "id": "q01",
+    "rank": null,
+    "top3": [
+     "battery-backup-standard-2026#00",
+     "site-visit-policy#01",
+     "battery-backup-standard-2026#01"
+    ]
+   },
+   {
+    "id": "q02",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q03",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v2#02",
+     "sw-upgrade-rollback#01",
+     "nbiot-config-guide-v2#00"
+    ]
+   },
+   {
+    "id": "q04",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q05",
+    "rank": null,
+    "top3": [
+     "site-visit-policy#01",
+     "noc-shift-handover#01",
+     "new-site-integration-checklist#01"
+    ]
+   },
+   {
+    "id": "q06",
+    "rank": 1,
+    "top3": [
+     "sop-vswr#02",
+     "site-visit-policy#00",
+     "sop-vswr#01"
+    ]
+   },
+   {
+    "id": "q07",
+    "rank": 1,
+    "top3": [
+     "sop-gps-sync-loss#00",
+     "sop-gps-sync-loss#01",
+     "ptp-sync-design#00"
+    ]
+   },
+   {
+    "id": "q08",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-rf#00",
+     "site-visit-policy#01",
+     "alarm-catalog-rf#01"
+    ]
+   },
+   {
+    "id": "q09",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-power#00",
+     "severity-classification#01",
+     "door-fire-alarm-procedure#00"
+    ]
+   },
+   {
+    "id": "q10",
+    "rank": 1,
+    "top3": [
+     "maintenance-windows#00",
+     "faq-noc#01",
+     "safety-rules-site-work#01"
+    ]
+   },
+   {
+    "id": "q11",
+    "rank": 1,
+    "top3": [
+     "sop-battery-replacement#01",
+     "change-management-policy#00",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q12",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#01",
+     "sw-upgrade-rollback#00",
+     "change-management-policy#00"
+    ]
+   },
+   {
+    "id": "q13",
+    "rank": 1,
+    "top3": [
+     "kpi-definitions#00",
+     "kpi-definitions#01",
+     "door-fire-alarm-procedure#00"
+    ]
+   },
+   {
+    "id": "q14",
+    "rank": 1,
+    "top3": [
+     "sw-upgrade-rollback#00",
+     "sw-upgrade-rollback#01",
+     "faq-noc#01"
+    ]
+   },
+   {
+    "id": "q15",
+    "rank": 1,
+    "top3": [
+     "new-site-integration-checklist#01",
+     "site-visit-policy#01",
+     "safety-rules-site-work#01"
+    ]
+   },
+   {
+    "id": "q16",
+    "rank": 1,
+    "top3": [
+     "temperature-alarm-procedure#00",
+     "temperature-alarm-procedure#01",
+     "temperature-alarm-procedure#02"
+    ]
+   },
+   {
+    "id": "q17",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#01",
+     "noc-shift-handover#00",
+     "new-site-integration-checklist#01"
+    ]
+   },
+   {
+    "id": "q18",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#00",
+     "sop-power-mains-failure#01",
+     "sop-vswr#02"
+    ]
+   },
+   {
+    "id": "q19",
+    "rank": 4,
+    "top3": [
+     "licence-management#01",
+     "site-visit-policy#00",
+     "temperature-alarm-procedure#01"
+    ]
+   },
+   {
+    "id": "q20",
+    "rank": 1,
+    "top3": [
+     "faq-noc#00",
+     "noc-shift-handover#01",
+     "noc-shift-handover#00"
+    ]
+   },
+   {
+    "id": "q21",
+    "rank": 1,
+    "top3": [
+     "vendor-escalation-sla#01",
+     "vendor-escalation-sla#00",
+     "interference-investigation#01"
+    ]
+   },
+   {
+    "id": "q26",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v1#00",
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01"
+    ]
+   }
+  ],
+  "structure/vector": [
+   {
+    "id": "q01",
+    "rank": null,
+    "top3": [
+     "sop-battery-replacement#03",
+     "sop-battery-replacement#01",
+     "battery-backup-standard-2026#01"
+    ]
+   },
+   {
+    "id": "q02",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q03",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v2#02",
+     "nbiot-config-guide-v2#01",
+     "faq-noc#01"
+    ]
+   },
+   {
+    "id": "q04",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q05",
+    "rank": 4,
+    "top3": [
+     "glossary#01",
+     "noc-shift-handover#00",
+     "faq-noc#00"
+    ]
+   },
+   {
+    "id": "q06",
+    "rank": 2,
+    "top3": [
+     "sop-vswr#00",
+     "sop-vswr#02",
+     "sop-vswr#01"
+    ]
+   },
+   {
+    "id": "q07",
+    "rank": 4,
+    "top3": [
+     "kpi-definitions#01",
+     "sop-vswr#02",
+     "noc-shift-handover#00"
+    ]
+   },
+   {
+    "id": "q08",
+    "rank": 4,
+    "top3": [
+     "alarm-catalog-power#01",
+     "alarm-catalog-rf#01",
+     "alarm-catalog-power#00"
+    ]
+   },
+   {
+    "id": "q09",
+    "rank": 2,
+    "top3": [
+     "alarm-catalog-power#01",
+     "alarm-catalog-power#00",
+     "alarm-catalog-rf#00"
+    ]
+   },
+   {
+    "id": "q10",
+    "rank": 5,
+    "top3": [
+     "sw-upgrade-rollback#00",
+     "site-visit-policy#01",
+     "ptp-sync-design#01"
+    ]
+   },
+   {
+    "id": "q11",
+    "rank": 4,
+    "top3": [
+     "change-management-policy#01",
+     "noc-shift-handover#00",
+     "sw-upgrade-rollback#01"
+    ]
+   },
+   {
+    "id": "q12",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#01",
+     "noc-shift-handover#00",
+     "change-management-policy#00"
+    ]
+   },
+   {
+    "id": "q13",
+    "rank": 7,
+    "top3": [
+     "battery-backup-standard-2026#00",
+     "battery-backup-standard-2026#02",
+     "kpi-definitions#01"
+    ]
+   },
+   {
+    "id": "q14",
+    "rank": 1,
+    "top3": [
+     "sw-upgrade-rollback#00",
+     "battery-backup-standard-2026#02",
+     "sw-upgrade-rollback#01"
+    ]
+   },
+   {
+    "id": "q15",
+    "rank": 1,
+    "top3": [
+     "new-site-integration-checklist#01",
+     "sw-upgrade-rollback#00",
+     "noc-shift-handover#00"
+    ]
+   },
+   {
+    "id": "q16",
+    "rank": 1,
+    "top3": [
+     "temperature-alarm-procedure#00",
+     "temperature-alarm-procedure#01",
+     "temperature-alarm-procedure#02"
+    ]
+   },
+   {
+    "id": "q17",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#01",
+     "sop-vswr#02",
+     "severity-classification#00"
+    ]
+   },
+   {
+    "id": "q18",
+    "rank": 1,
+    "top3": [
+     "sop-power-mains-failure#01",
+     "site-visit-policy#00",
+     "sop-power-mains-failure#03"
+    ]
+   },
+   {
+    "id": "q19",
+    "rank": 1,
+    "top3": [
+     "licence-management#00",
+     "licence-management#01",
+     "site-visit-policy#00"
+    ]
+   },
+   {
+    "id": "q20",
+    "rank": 2,
+    "top3": [
+     "noc-shift-handover#00",
+     "faq-noc#00",
+     "battery-backup-standard-2026#02"
+    ]
+   },
+   {
+    "id": "q21",
+    "rank": 1,
+    "top3": [
+     "vendor-escalation-sla#01",
+     "rru-replacement-procedure#02",
+     "battery-backup-standard-2026#02"
+    ]
+   },
+   {
+    "id": "q26",
+    "rank": 3,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v1#00"
+    ]
+   }
+  ],
+  "structure/hybrid": [
+   {
+    "id": "q01",
+    "rank": null,
+    "top3": [
+     "battery-backup-standard-2026#01",
+     "battery-backup-standard-2026#00",
+     "sop-battery-replacement#02"
+    ]
+   },
+   {
+    "id": "q02",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q03",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v2#02",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#00"
+    ]
+   },
+   {
+    "id": "q04",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q05",
+    "rank": 7,
+    "top3": [
+     "noc-shift-handover#00",
+     "glossary#01",
+     "escalation-matrix#00"
+    ]
+   },
+   {
+    "id": "q06",
+    "rank": 1,
+    "top3": [
+     "sop-vswr#02",
+     "sop-vswr#00",
+     "sop-vswr#01"
+    ]
+   },
+   {
+    "id": "q07",
+    "rank": 1,
+    "top3": [
+     "sop-gps-sync-loss#00",
+     "kpi-definitions#01",
+     "sop-power-mains-failure#01"
+    ]
+   },
+   {
+    "id": "q08",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-rf#00",
+     "alarm-catalog-rf#01",
+     "alarm-catalog-power#00"
+    ]
+   },
+   {
+    "id": "q09",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-power#00",
+     "glossary#01",
+     "sop-vswr#00"
+    ]
+   },
+   {
+    "id": "q10",
+    "rank": 1,
+    "top3": [
+     "maintenance-windows#00",
+     "faq-noc#01",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q11",
+    "rank": 2,
+    "top3": [
+     "change-management-policy#01",
+     "change-management-policy#00",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q12",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#01",
+     "change-management-policy#00",
+     "noc-shift-handover#00"
+    ]
+   },
+   {
+    "id": "q13",
+    "rank": 2,
+    "top3": [
+     "kpi-definitions#01",
+     "kpi-definitions#00",
+     "severity-classification#01"
+    ]
+   },
+   {
+    "id": "q14",
+    "rank": 1,
+    "top3": [
+     "sw-upgrade-rollback#00",
+     "sw-upgrade-rollback#01",
+     "new-site-integration-checklist#00"
+    ]
+   },
+   {
+    "id": "q15",
+    "rank": 1,
+    "top3": [
+     "new-site-integration-checklist#01",
+     "site-visit-policy#01",
+     "noc-shift-handover#00"
+    ]
+   },
+   {
+    "id": "q16",
+    "rank": 1,
+    "top3": [
+     "temperature-alarm-procedure#00",
+     "temperature-alarm-procedure#01",
+     "temperature-alarm-procedure#02"
+    ]
+   },
+   {
+    "id": "q17",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#01",
+     "noc-shift-handover#00",
+     "sop-power-mains-failure#01"
+    ]
+   },
+   {
+    "id": "q18",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#00",
+     "sop-power-mains-failure#01",
+     "sop-vswr#02"
+    ]
+   },
+   {
+    "id": "q19",
+    "rank": 2,
+    "top3": [
+     "licence-management#01",
+     "licence-management#00",
+     "site-visit-policy#00"
+    ]
+   },
+   {
+    "id": "q20",
+    "rank": 1,
+    "top3": [
+     "faq-noc#00",
+     "noc-shift-handover#00",
+     "noc-shift-handover#01"
+    ]
+   },
+   {
+    "id": "q21",
+    "rank": 1,
+    "top3": [
+     "vendor-escalation-sla#01",
+     "vendor-escalation-sla#00",
+     "battery-backup-standard-2026#02"
+    ]
+   },
+   {
+    "id": "q26",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v1#00",
+     "nbiot-config-guide-v2#01"
+    ]
+   }
+  ],
+  "structure/hybrid_rerank": [
+   {
+    "id": "q01",
+    "rank": null,
+    "top3": [
+     "battery-backup-standard-2026#00",
+     "maintenance-windows#00",
+     "sop-battery-replacement#01"
+    ]
+   },
+   {
+    "id": "q02",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "glossary#00"
+    ]
+   },
+   {
+    "id": "q03",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v2#02",
+     "faq-noc#01",
+     "sw-upgrade-rollback#01"
+    ]
+   },
+   {
+    "id": "q04",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#00",
+     "kpi-definitions#00"
+    ]
+   },
+   {
+    "id": "q05",
+    "rank": 1,
+    "top3": [
+     "severity-classification#00",
+     "new-site-integration-checklist#01",
+     "noc-shift-handover#00"
+    ]
+   },
+   {
+    "id": "q06",
+    "rank": 1,
+    "top3": [
+     "sop-vswr#02",
+     "sop-vswr#00",
+     "sop-vswr#01"
+    ]
+   },
+   {
+    "id": "q07",
+    "rank": 1,
+    "top3": [
+     "sop-gps-sync-loss#00",
+     "sop-gps-sync-loss#01",
+     "ptp-sync-design#00"
+    ]
+   },
+   {
+    "id": "q08",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-rf#00",
+     "glossary#01",
+     "alarm-catalog-power#00"
+    ]
+   },
+   {
+    "id": "q09",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-power#00",
+     "severity-classification#01",
+     "alarm-catalog-rf#00"
+    ]
+   },
+   {
+    "id": "q10",
+    "rank": 1,
+    "top3": [
+     "maintenance-windows#00",
+     "transmission-troubleshooting#01",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q11",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#00",
+     "sop-battery-replacement#01",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q12",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#01",
+     "change-management-policy#00",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q13",
+    "rank": 1,
+    "top3": [
+     "kpi-definitions#00",
+     "kpi-definitions#01",
+     "sop-vswr#01"
+    ]
+   },
+   {
+    "id": "q14",
+    "rank": 1,
+    "top3": [
+     "sw-upgrade-rollback#00",
+     "new-site-integration-checklist#00",
+     "severity-classification#00"
+    ]
+   },
+   {
+    "id": "q15",
+    "rank": 1,
+    "top3": [
+     "new-site-integration-checklist#01",
+     "noc-shift-handover#00",
+     "faq-noc#00"
+    ]
+   },
+   {
+    "id": "q16",
+    "rank": 1,
+    "top3": [
+     "temperature-alarm-procedure#00",
+     "temperature-alarm-procedure#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q17",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#01",
+     "noc-shift-handover#00",
+     "new-site-integration-checklist#01"
+    ]
+   },
+   {
+    "id": "q18",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#00",
+     "sop-power-mains-failure#01",
+     "sop-power-mains-failure#02"
+    ]
+   },
+   {
+    "id": "q19",
+    "rank": 2,
+    "top3": [
+     "licence-management#01",
+     "licence-management#00",
+     "site-visit-policy#00"
+    ]
+   },
+   {
+    "id": "q20",
+    "rank": 1,
+    "top3": [
+     "faq-noc#00",
+     "noc-shift-handover#00",
+     "noc-shift-handover#01"
+    ]
+   },
+   {
+    "id": "q21",
+    "rank": 1,
+    "top3": [
+     "vendor-escalation-sla#01",
+     "vendor-escalation-sla#00",
+     "escalation-matrix#00"
+    ]
+   },
+   {
+    "id": "q26",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v1#00",
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01"
+    ]
+   }
+  ],
+  "structure/hybrid_rerank/nofilter": [
+   {
+    "id": "q01",
+    "rank": null,
+    "top3": [
+     "battery-backup-standard-2026#00",
+     "battery-backup-standard-2023#00",
+     "maintenance-windows#00"
+    ]
+   },
+   {
+    "id": "q02",
+    "rank": 3,
+    "top3": [
+     "nbiot-config-guide-v1#00",
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01"
+    ]
+   },
+   {
+    "id": "q03",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v2#02",
+     "nbiot-config-guide-v1#01",
+     "faq-noc#01"
+    ]
+   },
+   {
+    "id": "q04",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v1#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#00"
+    ]
+   },
+   {
+    "id": "q05",
+    "rank": 1,
+    "top3": [
+     "severity-classification#00",
+     "new-site-integration-checklist#01",
+     "noc-shift-handover#00"
+    ]
+   },
+   {
+    "id": "q06",
+    "rank": 1,
+    "top3": [
+     "sop-vswr#02",
+     "sop-vswr#00",
+     "sop-vswr#01"
+    ]
+   },
+   {
+    "id": "q07",
+    "rank": 1,
+    "top3": [
+     "sop-gps-sync-loss#00",
+     "sop-gps-sync-loss#01",
+     "ptp-sync-design#00"
+    ]
+   },
+   {
+    "id": "q08",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-rf#00",
+     "glossary#01",
+     "alarm-catalog-power#00"
+    ]
+   },
+   {
+    "id": "q09",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-power#00",
+     "severity-classification#01",
+     "alarm-catalog-rf#00"
+    ]
+   },
+   {
+    "id": "q10",
+    "rank": 1,
+    "top3": [
+     "maintenance-windows#00",
+     "transmission-troubleshooting#01",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q11",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#00",
+     "sop-battery-replacement#01",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q12",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#01",
+     "change-management-policy#00",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q13",
+    "rank": 1,
+    "top3": [
+     "kpi-definitions#00",
+     "kpi-definitions#01",
+     "sop-vswr#01"
+    ]
+   },
+   {
+    "id": "q14",
+    "rank": 1,
+    "top3": [
+     "sw-upgrade-rollback#00",
+     "new-site-integration-checklist#00",
+     "severity-classification#00"
+    ]
+   },
+   {
+    "id": "q15",
+    "rank": 1,
+    "top3": [
+     "new-site-integration-checklist#01",
+     "noc-shift-handover#00",
+     "faq-noc#00"
+    ]
+   },
+   {
+    "id": "q16",
+    "rank": 1,
+    "top3": [
+     "temperature-alarm-procedure#00",
+     "temperature-alarm-procedure#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q17",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#01",
+     "noc-shift-handover#00",
+     "new-site-integration-checklist#01"
+    ]
+   },
+   {
+    "id": "q18",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#00",
+     "sop-power-mains-failure#01",
+     "sop-power-mains-failure#02"
+    ]
+   },
+   {
+    "id": "q19",
+    "rank": 2,
+    "top3": [
+     "licence-management#01",
+     "licence-management#00",
+     "site-visit-policy#00"
+    ]
+   },
+   {
+    "id": "q20",
+    "rank": 1,
+    "top3": [
+     "faq-noc#00",
+     "noc-shift-handover#00",
+     "noc-shift-handover#01"
+    ]
+   },
+   {
+    "id": "q21",
+    "rank": 1,
+    "top3": [
+     "vendor-escalation-sla#01",
+     "vendor-escalation-sla#00",
+     "escalation-matrix#00"
+    ]
+   },
+   {
+    "id": "q26",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v1#00",
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01"
+    ]
+   }
+  ],
+  "fixed/bm25": [
+   {
+    "id": "q01",
+    "rank": null,
+    "top3": [
+     "battery-backup-standard-2026#01",
+     "battery-backup-standard-2026#00",
+     "site-visit-policy#02"
+    ]
+   },
+   {
+    "id": "q02",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q03",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v2#02",
+     "nbiot-config-guide-v2#00",
+     "sw-upgrade-rollback#01"
+    ]
+   },
+   {
+    "id": "q04",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q05",
+    "rank": null,
+    "top3": [
+     "site-visit-policy#02",
+     "site-visit-policy#01",
+     "noc-shift-handover#01"
+    ]
+   },
+   {
+    "id": "q06",
+    "rank": 1,
+    "top3": [
+     "sop-vswr#02",
+     "site-visit-policy#01",
+     "sop-vswr#00"
+    ]
+   },
+   {
+    "id": "q07",
+    "rank": 1,
+    "top3": [
+     "sop-gps-sync-loss#01",
+     "sop-gps-sync-loss#00",
+     "sop-gps-sync-loss#02"
+    ]
+   },
+   {
+    "id": "q08",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-rf#00",
+     "site-visit-policy#02",
+     "alarm-catalog-rf#01"
+    ]
+   },
+   {
+    "id": "q09",
+    "rank": 3,
+    "top3": [
+     "severity-classification#02",
+     "severity-classification#01",
+     "alarm-catalog-power#01"
+    ]
+   },
+   {
+    "id": "q10",
+    "rank": 1,
+    "top3": [
+     "maintenance-windows#00",
+     "safety-rules-site-work#01",
+     "faq-noc#01"
+    ]
+   },
+   {
+    "id": "q11",
+    "rank": 1,
+    "top3": [
+     "sop-battery-replacement#01",
+     "change-management-policy#00",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q12",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#02",
+     "sw-upgrade-rollback#00",
+     "noc-shift-handover#01"
+    ]
+   },
+   {
+    "id": "q13",
+    "rank": 3,
+    "top3": [
+     "kpi-definitions#00",
+     "kpi-definitions#02",
+     "kpi-definitions#01"
+    ]
+   },
+   {
+    "id": "q14",
+    "rank": 1,
+    "top3": [
+     "sw-upgrade-rollback#00",
+     "sw-upgrade-rollback#01",
+     "sw-upgrade-rollback#02"
+    ]
+   },
+   {
+    "id": "q15",
+    "rank": 1,
+    "top3": [
+     "new-site-integration-checklist#02",
+     "safety-rules-site-work#01",
+     "noc-shift-handover#00"
+    ]
+   },
+   {
+    "id": "q16",
+    "rank": 1,
+    "top3": [
+     "temperature-alarm-procedure#00",
+     "temperature-alarm-procedure#01",
+     "temperature-alarm-procedure#02"
+    ]
+   },
+   {
+    "id": "q17",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#02",
+     "site-visit-policy#01",
+     "new-site-integration-checklist#02"
+    ]
+   },
+   {
+    "id": "q18",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#00",
+     "sop-power-mains-failure#02",
+     "sop-power-mains-failure#01"
+    ]
+   },
+   {
+    "id": "q19",
+    "rank": 3,
+    "top3": [
+     "licence-management#01",
+     "sop-vswr#02",
+     "licence-management#00"
+    ]
+   },
+   {
+    "id": "q20",
+    "rank": 1,
+    "top3": [
+     "faq-noc#00",
+     "noc-shift-handover#00",
+     "noc-shift-handover#01"
+    ]
+   },
+   {
+    "id": "q21",
+    "rank": 1,
+    "top3": [
+     "vendor-escalation-sla#01",
+     "vendor-escalation-sla#00",
+     "escalation-matrix#02"
+    ]
+   },
+   {
+    "id": "q26",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v1#00",
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01"
+    ]
+   }
+  ],
+  "fixed/vector": [
+   {
+    "id": "q01",
+    "rank": null,
+    "top3": [
+     "battery-backup-standard-2026#01",
+     "sop-battery-replacement#03",
+     "battery-backup-standard-2026#02"
+    ]
+   },
+   {
+    "id": "q02",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "glossary#01"
+    ]
+   },
+   {
+    "id": "q03",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v2#02",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#00"
+    ]
+   },
+   {
+    "id": "q04",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q05",
+    "rank": 4,
+    "top3": [
+     "noc-shift-handover#00",
+     "escalation-matrix#01",
+     "faq-noc#00"
+    ]
+   },
+   {
+    "id": "q06",
+    "rank": 3,
+    "top3": [
+     "sop-vswr#00",
+     "sop-vswr#01",
+     "sop-vswr#02"
+    ]
+   },
+   {
+    "id": "q07",
+    "rank": 1,
+    "top3": [
+     "sop-gps-sync-loss#01",
+     "sw-upgrade-rollback#02",
+     "sop-power-mains-failure#04"
+    ]
+   },
+   {
+    "id": "q08",
+    "rank": 4,
+    "top3": [
+     "alarm-catalog-power#01",
+     "alarm-catalog-rf#02",
+     "alarm-catalog-power#00"
+    ]
+   },
+   {
+    "id": "q09",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-power#01",
+     "alarm-catalog-power#00",
+     "alarm-catalog-rf#00"
+    ]
+   },
+   {
+    "id": "q10",
+    "rank": 8,
+    "top3": [
+     "site-visit-policy#02",
+     "site-visit-policy#01",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q11",
+    "rank": 5,
+    "top3": [
+     "sw-upgrade-rollback#01",
+     "faq-noc#00",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q12",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#02",
+     "battery-backup-standard-2026#03",
+     "noc-shift-handover#00"
+    ]
+   },
+   {
+    "id": "q13",
+    "rank": 2,
+    "top3": [
+     "battery-backup-standard-2026#00",
+     "kpi-definitions#01",
+     "battery-backup-standard-2026#03"
+    ]
+   },
+   {
+    "id": "q14",
+    "rank": 1,
+    "top3": [
+     "sw-upgrade-rollback#00",
+     "sw-upgrade-rollback#01",
+     "sw-upgrade-rollback#02"
+    ]
+   },
+   {
+    "id": "q15",
+    "rank": 1,
+    "top3": [
+     "new-site-integration-checklist#02",
+     "faq-noc#00",
+     "sw-upgrade-rollback#02"
+    ]
+   },
+   {
+    "id": "q16",
+    "rank": 2,
+    "top3": [
+     "temperature-alarm-procedure#01",
+     "temperature-alarm-procedure#00",
+     "temperature-alarm-procedure#02"
+    ]
+   },
+   {
+    "id": "q17",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#02",
+     "site-visit-policy#01",
+     "site-visit-policy#00"
+    ]
+   },
+   {
+    "id": "q18",
+    "rank": 3,
+    "top3": [
+     "sop-power-mains-failure#04",
+     "sw-upgrade-rollback#02",
+     "sop-power-mains-failure#02"
+    ]
+   },
+   {
+    "id": "q19",
+    "rank": 1,
+    "top3": [
+     "licence-management#00",
+     "licence-management#01",
+     "sw-upgrade-rollback#02"
+    ]
+   },
+   {
+    "id": "q20",
+    "rank": 2,
+    "top3": [
+     "noc-shift-handover#00",
+     "faq-noc#00",
+     "sw-upgrade-rollback#01"
+    ]
+   },
+   {
+    "id": "q21",
+    "rank": 1,
+    "top3": [
+     "vendor-escalation-sla#01",
+     "sw-upgrade-rollback#02",
+     "sw-upgrade-rollback#01"
+    ]
+   },
+   {
+    "id": "q26",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v1#00",
+     "nbiot-config-guide-v2#01"
+    ]
+   }
+  ],
+  "fixed/hybrid": [
+   {
+    "id": "q01",
+    "rank": null,
+    "top3": [
+     "battery-backup-standard-2026#01",
+     "battery-backup-standard-2026#02",
+     "battery-backup-standard-2026#00"
+    ]
+   },
+   {
+    "id": "q02",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q03",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v2#02",
+     "nbiot-config-guide-v2#00",
+     "faq-noc#01"
+    ]
+   },
+   {
+    "id": "q04",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q05",
+    "rank": null,
+    "top3": [
+     "noc-shift-handover#00",
+     "noc-shift-handover#01",
+     "escalation-matrix#01"
+    ]
+   },
+   {
+    "id": "q06",
+    "rank": 1,
+    "top3": [
+     "sop-vswr#02",
+     "sop-vswr#00",
+     "site-visit-policy#01"
+    ]
+   },
+   {
+    "id": "q07",
+    "rank": 1,
+    "top3": [
+     "sop-gps-sync-loss#01",
+     "sop-gps-sync-loss#02",
+     "rru-replacement-procedure#02"
+    ]
+   },
+   {
+    "id": "q08",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-rf#00",
+     "alarm-catalog-rf#02",
+     "alarm-catalog-power#00"
+    ]
+   },
+   {
+    "id": "q09",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-power#01",
+     "severity-classification#01",
+     "severity-classification#02"
+    ]
+   },
+   {
+    "id": "q10",
+    "rank": 1,
+    "top3": [
+     "maintenance-windows#00",
+     "site-visit-policy#01",
+     "faq-noc#01"
+    ]
+   },
+   {
+    "id": "q11",
+    "rank": 2,
+    "top3": [
+     "sw-upgrade-rollback#00",
+     "change-management-policy#00",
+     "sw-upgrade-rollback#01"
+    ]
+   },
+   {
+    "id": "q12",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#02",
+     "noc-shift-handover#00",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q13",
+    "rank": 1,
+    "top3": [
+     "kpi-definitions#01",
+     "temperature-alarm-procedure#01",
+     "kpi-definitions#02"
+    ]
+   },
+   {
+    "id": "q14",
+    "rank": 1,
+    "top3": [
+     "sw-upgrade-rollback#00",
+     "sw-upgrade-rollback#01",
+     "sw-upgrade-rollback#02"
+    ]
+   },
+   {
+    "id": "q15",
+    "rank": 1,
+    "top3": [
+     "new-site-integration-checklist#02",
+     "site-visit-policy#02",
+     "noc-shift-handover#00"
+    ]
+   },
+   {
+    "id": "q16",
+    "rank": 1,
+    "top3": [
+     "temperature-alarm-procedure#00",
+     "temperature-alarm-procedure#01",
+     "temperature-alarm-procedure#02"
+    ]
+   },
+   {
+    "id": "q17",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#02",
+     "site-visit-policy#01",
+     "sw-upgrade-rollback#02"
+    ]
+   },
+   {
+    "id": "q18",
+    "rank": 1,
+    "top3": [
+     "sop-power-mains-failure#02",
+     "site-visit-policy#00",
+     "sop-power-mains-failure#04"
+    ]
+   },
+   {
+    "id": "q19",
+    "rank": 2,
+    "top3": [
+     "licence-management#01",
+     "licence-management#00",
+     "sop-gps-sync-loss#02"
+    ]
+   },
+   {
+    "id": "q20",
+    "rank": 1,
+    "top3": [
+     "faq-noc#00",
+     "noc-shift-handover#00",
+     "escalation-matrix#01"
+    ]
+   },
+   {
+    "id": "q21",
+    "rank": 1,
+    "top3": [
+     "vendor-escalation-sla#01",
+     "battery-backup-standard-2026#03",
+     "escalation-matrix#02"
+    ]
+   },
+   {
+    "id": "q26",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v1#00",
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01"
+    ]
+   }
+  ],
+  "fixed/hybrid_rerank": [
+   {
+    "id": "q01",
+    "rank": null,
+    "top3": [
+     "battery-backup-standard-2026#01",
+     "battery-backup-standard-2026#00",
+     "battery-backup-standard-2026#02"
+    ]
+   },
+   {
+    "id": "q02",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "glossary#01"
+    ]
+   },
+   {
+    "id": "q03",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v2#02",
+     "faq-noc#01",
+     "nbiot-config-guide-v2#00"
+    ]
+   },
+   {
+    "id": "q04",
+    "rank": 2,
+    "top3": [
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v2#01",
+     "nbiot-config-guide-v2#02"
+    ]
+   },
+   {
+    "id": "q05",
+    "rank": 8,
+    "top3": [
+     "new-site-integration-checklist#02",
+     "severity-classification#00",
+     "noc-shift-handover#00"
+    ]
+   },
+   {
+    "id": "q06",
+    "rank": 1,
+    "top3": [
+     "sop-vswr#02",
+     "sop-vswr#00",
+     "sop-vswr#01"
+    ]
+   },
+   {
+    "id": "q07",
+    "rank": 1,
+    "top3": [
+     "sop-gps-sync-loss#01",
+     "sop-gps-sync-loss#02",
+     "sop-gps-sync-loss#00"
+    ]
+   },
+   {
+    "id": "q08",
+    "rank": 1,
+    "top3": [
+     "alarm-catalog-rf#00",
+     "alarm-catalog-rf#01",
+     "alarm-catalog-power#00"
+    ]
+   },
+   {
+    "id": "q09",
+    "rank": 2,
+    "top3": [
+     "alarm-catalog-power#00",
+     "alarm-catalog-power#01",
+     "severity-classification#02"
+    ]
+   },
+   {
+    "id": "q10",
+    "rank": 1,
+    "top3": [
+     "maintenance-windows#00",
+     "sw-upgrade-rollback#00",
+     "transmission-troubleshooting#01"
+    ]
+   },
+   {
+    "id": "q11",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#00",
+     "sop-battery-replacement#01",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q12",
+    "rank": 1,
+    "top3": [
+     "change-management-policy#02",
+     "sop-battery-replacement#01",
+     "sw-upgrade-rollback#00"
+    ]
+   },
+   {
+    "id": "q13",
+    "rank": 2,
+    "top3": [
+     "kpi-definitions#02",
+     "kpi-definitions#01",
+     "sop-vswr#01"
+    ]
+   },
+   {
+    "id": "q14",
+    "rank": 1,
+    "top3": [
+     "sw-upgrade-rollback#00",
+     "sw-upgrade-rollback#01",
+     "new-site-integration-checklist#00"
+    ]
+   },
+   {
+    "id": "q15",
+    "rank": 1,
+    "top3": [
+     "new-site-integration-checklist#02",
+     "noc-shift-handover#00",
+     "faq-noc#00"
+    ]
+   },
+   {
+    "id": "q16",
+    "rank": 2,
+    "top3": [
+     "temperature-alarm-procedure#01",
+     "temperature-alarm-procedure#00",
+     "temperature-alarm-procedure#02"
+    ]
+   },
+   {
+    "id": "q17",
+    "rank": 1,
+    "top3": [
+     "site-visit-policy#02",
+     "site-visit-policy#01",
+     "severity-classification#00"
+    ]
+   },
+   {
+    "id": "q18",
+    "rank": 1,
+    "top3": [
+     "sop-power-mains-failure#02",
+     "site-visit-policy#00",
+     "sop-power-mains-failure#01"
+    ]
+   },
+   {
+    "id": "q19",
+    "rank": 2,
+    "top3": [
+     "licence-management#01",
+     "licence-management#00",
+     "site-visit-policy#01"
+    ]
+   },
+   {
+    "id": "q20",
+    "rank": 1,
+    "top3": [
+     "faq-noc#00",
+     "noc-shift-handover#00",
+     "noc-shift-handover#01"
+    ]
+   },
+   {
+    "id": "q21",
+    "rank": 1,
+    "top3": [
+     "vendor-escalation-sla#01",
+     "vendor-escalation-sla#00",
+     "vendor-escalation-sla#02"
+    ]
+   },
+   {
+    "id": "q26",
+    "rank": 1,
+    "top3": [
+     "nbiot-config-guide-v1#00",
+     "nbiot-config-guide-v2#00",
+     "nbiot-config-guide-v1#01"
+    ]
+   }
+  ]
+ }
+}
