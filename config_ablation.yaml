@@ -1,0 +1,71 @@
+chunking:
+  fixed_overlap: 12
+  fixed_size: 50
+  max_tokens: 300
+  min_tokens: 60
+  near_dup_threshold: 0.85
+  strategy: structure
+embeddings:
+  backend: fastembed
+  gemini_model: gemini-embedding-001
+  model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+  models_dir: .models
+eval:
+  judge_correctness_prompt: v1
+  judge_faithfulness_prompt: v1
+  prompts:
+  - v2
+  thresholds:
+    abstain_accuracy: 0.8
+    faithfulness: 0.8
+    judge_pass: 0.7
+    key_fact_recall: 0.7
+    retrieval_recall@5: 0.8
+    source_hit: 0.8
+llm:
+  answer:
+    backoff_s: 8
+    max_retries: 6
+    min_interval_s: 7
+    model: gemini-3.5-flash-lite
+    timeout_s: 90
+  judge:
+    backoff_s: 8
+    max_retries: 6
+    min_interval_s: 7
+    model: gemini-3.5-flash-lite
+    timeout_s: 90
+paths:
+  index: index
+  processed: data/processed
+  raw: data/raw
+  results: evals/results_ablation
+pricing_usd_per_1m:
+  gemini-3.5-flash-lite:
+    input: 0.0
+    output: 0.0
+  gemini-3.8-flash:
+    input: 0.0
+    output: 0.0
+rag:
+  context_budget_tokens: 1200
+  min_rerank_score: null
+  mode: vector
+  prompt: v2
+  temperature: 0.0
+  top_k: 3
+rerank:
+  backend: cross_encoder
+  model: jinaai/jina-reranker-v2-base-multilingual
+  models_dir: .models
+search:
+  candidates: 30
+  default_filters:
+    access:
+    - noc
+    - field
+  rerank_top: 20
+  rrf_k: 60
+  weights:
+    bm25: 1.0
+    vector: 1.0

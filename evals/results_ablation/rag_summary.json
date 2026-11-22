@@ -1,0 +1,26 @@
+[
+ {
+  "prompt_version": "v2",
+  "model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.5-flash-lite",
+  "n": 26,
+  "n_answerable": 22,
+  "n_unanswerable": 4,
+  "abstain_accuracy": 0.7307692307692307,
+  "idk_on_unanswerable": 1.0,
+  "false_refusal_rate": 0.3181818181818182,
+  "key_fact_recall": 0.6818181818181818,
+  "source_hit": 0.6818181818181818,
+  "source_precision": 0.9111111111111111,
+  "forbidden_ok": 0.75,
+  "citations_valid": 1.0,
+  "judge_pass": 0.7307692307692307,
+  "faithfulness": 0.8666666666666667,
+  "latency_p50_s": 7.2675,
+  "latency_p95_s": 29.1545,
+  "avg_context_tokens": 274.1923076923077,
+  "avg_in_tokens": 803.2307692307693,
+  "cost_per_1000_questions_usd": 0.0,
+  "errors": 0
+ }
+]
