@@ -15,7 +15,7 @@
   "forbidden_ok": 0.75,
   "citations_valid": 1.0,
   "judge_pass": 0.7307692307692307,
-  "faithfulness": 0.8666666666666667,
+  "faithfulness": 0.9333333333333333,
   "latency_p50_s": 7.2675,
   "latency_p95_s": 29.1545,
   "avg_context_tokens": 274.1923076923077,

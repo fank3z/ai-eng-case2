@@ -7,7 +7,8 @@ import statistics
 from pathlib import Path
 
 from src.prompts import load_prompt
-from src.rag.answer import NOT_FOUND_TEXT, answer
+from src.rag.answer import NOT_FOUND_TEXT, answer, format_sources
+from src.retrieval.search import Hit
 from . import scoring as S
 
 log = logging.getLogger("eval.rag")
@@ -56,7 +57,9 @@ def run_one(cfg, testset, searcher, llm, judge_llm, prompt_version, out_dir: Pat
             rec["judge_verdict"], rec["judge_reason"] = j["verdict"], j["reason"]
             rec["judge_tokens"] = j["in"] + j["out"]
             if not r.not_found and r.claims:
-                ctx_text = "\n\n".join(c["text"] for c in searcher.chunks if c["chunk_id"] in set(r.context))
+                from src.rag.answer import format_sources
+                from src.retrieval.search import Hit
+                ctx_text = format_sources([Hit(next(c for c in searcher.chunks if c['chunk_id'] == cid), 0, {}) for cid in r.context])
                 f = S.judge_faithfulness(judge_llm, fp, [c["text"] for c in r.claims], ctx_text)
                 rec["s_faithfulness"], rec["faithfulness_details"] = f["score"], f["details"]
                 rec["judge_tokens"] += f.get("in", 0) + f.get("out", 0)
