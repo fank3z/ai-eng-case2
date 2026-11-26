@@ -73,8 +73,8 @@ make run                   # = python main.py all
 
 | | structure | fixed |
 |---|---|---|
-| Чанки, що перетинають межу розділу | 0 | 81 з 90 (90%) |
-| Таблиці, розрізані між чанками | 0 з 15 | 13 з 15 |
+| Чанки, що перетинають межу розділу | 0 | 80 з 89 (90%) |
+| Таблиці, розрізані між чанками | 0 з 15 | 12 з 15 |
 
 Вплив на якість пошуку (recall@k, MRR для обох стратегій) — у `REPORT.md`.
 
@@ -108,3 +108,9 @@ make run                   # = python main.py all
 ## Вартість
 Gemini free tier → $0. Оцінка за платним тарифом: заповніть `pricing_usd_per_1m` у `config.yaml` — `$ / 1000 питань` у звіті.
 Embeddings і reranker локальні — $0.
+
+## Ablation (порівняння з погіршеною конфігурацією)
+`config_ablation.yaml` — та сама система без BM25 і reranker (лише векторний пошук, top-3) і без фільтра `status`.
+Запуск: `python main.py eval --config config_ablation.yaml` → `evals/results_ablation/`.
+Показує, що метрики чутливі до якості пошуку; ручна розмітка для калібрування судді — `evals/human_labels.jsonl`
+(скрипт розмітки — `tools/label.py`). Помилки порогів у ablation очікувані.
